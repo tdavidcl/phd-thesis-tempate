@@ -1,0 +1,66 @@
+%\documentclass[oneside]{phdens}   %——————————>   Comment for printed version
+\documentclass[twoside]{phdens} %———————————>  Uncomment for printed version
+
+
+%% graph related package
+\usepackage{graphicx}
+
+
+
+%% colors
+%\usepackage[usenames,dvipsnames]{xcolor}
+
+%%%% Mise en page %%%%
+\usepackage{ragged2e} % For temporary remove of \centering
+	%### Sections ###%
+%\usepackage[nokeyprefix]{refstyle}
+%\usepackage{appendix}
+%\usepackage{sectsty}
+
+\usepackage{lipsum}
+
+
+\usepackage[framemethod=TikZ]{mdframed} % For highlight boxes
+\mdfsetup{%
+   middlelinecolor=black, %red
+   middlelinewidth=1pt,
+   backgroundcolor=black!15, %red!20
+   roundcorner=15pt}
+
+\input{aliases.sty}
+
+\begin{document}
+\dominitoc% Initialization minitoc
+
+\input{coverpage}
+
+\input{abstract}
+
+\input{remerciement}
+
+
+\setcounter{tocdepth}{1}
+
+\tableofcontents
+\adjustmtc
+
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{notations}
+
+
+\include{chapter1}
+\include{chapter2}
+
+
+\appendix
+
+\chapter{a beautifull appendix}
+\section{First section}\lipsum
+\section{Second section}\lipsum
+\chapter{another beautifull appendix}
+\section{First section}\lipsum
+\section{Second section}\lipsum
+\end{document}
